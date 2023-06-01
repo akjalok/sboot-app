@@ -25,7 +25,7 @@ jobs:
   test:
 
     strategy:
-      alok:
+      matrix:
         browser: [chrome, firefox]
         device: [desktop, mobile]
 
@@ -42,8 +42,8 @@ jobs:
 
       - name: Demo of how to access current matrix context
         run: |
-          echo "Browser:" ${{ alok.browser }}
-          echo "Device: ${{ alok.device }}"
+          echo "Browser:" ${{ matrix.browser }}
+          echo "Device: ${{ matrix.device }}"
 
       - name: Step inside test job
         run: echo "Hello $NAME"
