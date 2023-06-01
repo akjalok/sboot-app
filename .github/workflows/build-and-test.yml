@@ -12,7 +12,7 @@ jobs:
   build:
 
     runs-on: ubuntu-20.04
-
+    needs:  test
     timeout-minutes: 5
 
     steps:
@@ -28,8 +28,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     timeout-minutes: 10
-    needs: build
-    
+
     env:
       NAME: Planet
 
